@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace CodingInterviewPracticeProblems
+﻿namespace CodingInterviewPracticeProblems
 {
     public class AddNonIntsAsInts
     {
@@ -14,14 +12,10 @@ namespace CodingInterviewPracticeProblems
             int len = num.Length;
             int value = 0;
 
-            //if (len == 0)
-            //{
-            //    return 0;
-            //}
-
+            Exponent exponet = new Exponent();
             for (int i = 0; i < len; i++)
             {
-                int place = (int)Math.Pow(10, i);
+                int place = (int)exponet.Pow(10, i);
                 value += CharToInt(num[i]) * place;
             }
 

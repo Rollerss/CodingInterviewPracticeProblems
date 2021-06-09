@@ -11,7 +11,7 @@ namespace Test_CodingInterviewPracticeProblems
         [InlineData("11", "11", 22)]
         [InlineData("111", "111", 222)]
 
-        public void ShouldReturnArrayWithIndexOfNumberEqualToSum(string num1, string num2, int answer)
+        public void ShouldReturnIntWithSumOfTwoString(string num1, string num2, int answer)
         {
             var sut = new AddNonIntsAsInts();
 
