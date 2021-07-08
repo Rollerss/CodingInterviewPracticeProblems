@@ -34,5 +34,38 @@ namespace CodingInterviewPracticeProblems
             return arrAnsw.ToArray();
         }
 
+        public int[][] GetTripletsEqualToZeroBetter(int[] arrNums)
+        {
+            HashSet<int[]> arrAnsw = new HashSet<int[]>();
+
+            // used a dictionary because the need to return the index
+            Dictionary<int, int> lookup = new();
+
+
+            for (int i = 0; i < arrNums.Length; i++)
+            {
+                int num = arrNums[i];
+                foreach (var (k, v) in lookup)
+                {
+                    int diff = 0 - num - k;
+
+                    if (lookup.ContainsKey(diff) && lookup[diff] != v)
+                    {
+                        int[] answ = { num, diff, k };
+                        Array.Sort(answ);
+                        if (!arrAnsw.Any(a => a.SequenceEqual(answ)))
+                        {
+                            arrAnsw.Add(answ);
+                        }
+                    }
+                }
+                if (!lookup.ContainsKey(arrNums[i]))
+                {
+                    lookup[arrNums[i]] = i;
+                }
+            }
+
+            return arrAnsw.ToArray();
+        }
     }
 }
