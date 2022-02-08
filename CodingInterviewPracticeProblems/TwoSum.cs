@@ -37,6 +37,29 @@ namespace CodingInterviewPracticeProblems
                 }
             }
 
+            return new int[2];
+        }
+
+        public int[] GetIndexesTwoNumsEqualTwoSumTwoPointersContentTime(int[] numsArr, int sum)
+        {
+            int left = 0;
+            int right = numsArr.Length - 1;
+
+            while(left < right)
+            {
+                if (numsArr[left] + numsArr[right] == sum)
+                {
+                    return new[] { left, right };   
+                }
+                else if(numsArr[left] + numsArr[right] < sum)
+                {
+                    left++;
+                }
+                else
+                {
+                    right--;
+                }
+            }
 
             return new int[2];
         }
